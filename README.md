@@ -1,6 +1,6 @@
-# MDO Full-Stack Environment
+# Maxdent
 
-React + Vite frontend, Tailwind CSS, Python FastAPI backend, MariaDB database.
+MDO (MaxDenta Lab / Master Data Office) — React + Vite frontend, Tailwind CSS, Python FastAPI backend, MariaDB database.
 
 Node.js is used only for the frontend toolchain (Vite / npm).
 
@@ -15,10 +15,6 @@ MDO/
 └── docker-compose.yml # Optional MariaDB via Docker
 ```
 
-## Features
-
-- **Currency Master** — create / search / edit / delete currencies (`currency_id`, `currency_name`, `status`)
-
 ## Run services
 
 ```bash
@@ -28,11 +24,11 @@ npm run db:init
 # Frontend — http://localhost:5173
 npm run dev:frontend
 
-# Backend — http://localhost:8000
+# Backend — http://localhost:8001
 npm run dev:backend
 ```
 
-Open http://localhost:5173 for Currency Master.
+Open http://localhost:5173. Last built screen: Case Study (`/case-studies`).
 
-API: `GET/POST /currencies`, `PUT/DELETE /currencies/{id}`  
-Vite proxies `/api/*` → FastAPI on port 8000.
+API health: `GET http://localhost:8001/health`  
+Vite proxies `/api` and `/uploads` to FastAPI on port 8001.
