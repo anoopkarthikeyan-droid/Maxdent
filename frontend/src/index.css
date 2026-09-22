@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0a0a0a;
+  --charcoal: #141416;
+  --steel: #2b2f36;
+  --canvas: #e6e8ec;
+  --panel: #ffffff;
+  --line: #cfd4dc;
+  --muted: #5d6470;
+  --brand: #e10613;
+  --brand-dark: #b70510;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: #1a1d23;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: var(--canvas);
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: var(--ink);
+  padding: 0.55rem 1.35rem;
+  border-bottom: 3px solid var(--brand);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  z-index: 20;
+}
+
+.app-body {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+}
+
+.app-sidebar {
+  display: flex;
+  width: 15.5rem;
+  flex-shrink: 0;
+  flex-direction: column;
+  background: var(--charcoal);
+  color: #f4f4f5;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.app-sidebar-brand {
+  padding: 1rem 1.1rem 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.app-sidebar-kicker {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.app-sidebar-title {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.app-sidebar-nav {
+  flex: 1;
+  overflow: auto;
+  padding: 0.75rem 0.7rem 1.25rem;
+}
+
+.app-nav-group + .app-nav-group {
+  margin-top: 0.9rem;
+}
+
+.app-nav-group-title {
+  margin: 0 0.55rem 0.35rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.app-nav-link {
+  display: block;
+  border-left: 3px solid transparent;
+  border-radius: 0.3rem;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.app-nav-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.app-nav-link.is-active {
+  background: rgba(225, 6, 19, 0.16);
+  border-left-color: var(--brand);
+  color: #ffffff;
+}
+
+.app-workspace {
+  min-width: 0;
+  flex: 1;
+  overflow: auto;
+  background:
+    linear-gradient(180deg, rgba(20, 20, 22, 0.035), transparent 8rem),
+    var(--canvas);
+}
+
+.app-workspace > div {
+  max-width: 80rem;
+}
+
+.app-workspace h1 {
+  color: #111318;
+  letter-spacing: -0.02em;
+}
+
+.app-workspace h1 + p,
+.app-workspace header p {
+  color: var(--muted);
+}
+
+.app-workspace section.rounded-lg {
+  position: relative;
+  overflow: hidden;
+  border-color: var(--line) !important;
+  background: var(--panel) !important;
+  box-shadow:
+    0 1px 0 rgba(16, 24, 40, 0.04),
+    0 10px 28px rgba(16, 24, 40, 0.06) !important;
+}
+
+.app-workspace section.rounded-lg::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, var(--brand) 0, var(--brand) 7.5rem, var(--ink) 7.5rem);
+}
+
+.app-workspace section.rounded-lg h2 {
+  margin-top: 0.15rem;
+  font-size: 0.78rem !important;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2a3038 !important;
+}
+
+.app-workspace thead {
+  background: #f3f5f8 !important;
+}
+
+.app-workspace thead th {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3d4450 !important;
+  border-bottom: 1px solid var(--line);
+}
+
+.app-workspace tbody tr:hover {
+  background: #f7f8fb !important;
+}
+
+.app-workspace input,
+.app-workspace select,
+.app-workspace textarea {
+  border-color: #c5cad3 !important;
+  background: #fbfcfd;
+  color: #1c2128;
+}
+
+.app-workspace input:focus,
+.app-workspace select:focus,
+.app-workspace textarea:focus {
+  border-color: var(--brand) !important;
+  box-shadow: 0 0 0 3px rgba(225, 6, 19, 0.12);
+}
+
+.app-workspace input:disabled,
+.app-workspace select:disabled,
+.app-workspace textarea:disabled {
+  background: #eef0f3 !important;
+  color: #6b7280 !important;
+}
+
+.app-workspace button.bg-slate-900 {
+  background: var(--brand) !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.app-workspace button.bg-slate-900:hover {
+  background: var(--brand-dark) !important;
+}
+
+.app-workspace button.border-slate-300 {
+  background: #fff;
+  border-color: #c5cad3 !important;
+  color: #2a3038 !important;
+}
+
+.app-workspace button.border-slate-300:hover {
+  background: #f4f6f8 !important;
+}

@@ -1,0 +1,59 @@
+const API_BASE = "/api"
+
+async function request(path, options = {}) {
+  const response = await fetch(`${API_BASE}${path}`, {
+    ...options,
+  })
+
+  if (response.status === 204) {
+    return null
+  }
+
+  let data = null
+  const text = await response.text()
+  if (text) {
+    try {
+      data = JSON.parse(text)
+    } catch {
+      data = { detail: text }
+    }
+  }
+
+  if (!response.ok) {
+    const detail = data?.detail
+    const message =
+      typeof detail === "string"
+        ? detail
+        : Array.isArray(detail)
+          ? detail.map((item) => item.msg || JSON.stringify(item)).join(", ")
+          : "Request failed"
+    throw new Error(message)
+  }
+
+  return data
+}
+
+export function listCompanies(search = "") {
+  const query = search ? `?search=${encodeURIComponent(search)}` : ""
+  return request(`/companies${query}`)
+}
+
+export function createCompany(formData) {
+  return request("/companies", {
+    method: "POST",
+    body: formData,
+  })
+}
+
+export function updateCompany(companyId, formData) {
+  return request(`/companies/${encodeURIComponent(companyId)}`, {
+    method: "PUT",
+    body: formData,
+  })
+}
+
+export function deleteCompany(companyId) {
+  return request(`/companies/${encodeURIComponent(companyId)}`, {
+    method: "DELETE",
+  })
+}

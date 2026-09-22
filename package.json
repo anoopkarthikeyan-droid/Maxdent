@@ -1,0 +1,12 @@
+{
+  "name": "mdo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "backend\\.venv\\Scripts\\python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8001 --app-dir backend",
+    "db:init": "backend\\.venv\\Scripts\\python scripts\\ensure_schema.py",
+    "db:up": "docker compose up -d mariadb",
+    "db:down": "docker compose down"
+  }
+}

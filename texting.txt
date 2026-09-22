@@ -1,0 +1,57 @@
+For Each Scheduler details we need to enter additional details like Working Doctors Name,Clinics Name(TEXTBOX,Fetch corresponding Clinic),Mobile No(TEXTBOX, Fetch from Customer section),
+Email Id((TEXTBOX, Fetch from Customer section)),Patient Name(TEXTBOX, Fetch from Customer section),Age(TEXTBOX),Sex(combobox,M/F),Patient availability(TEXTBOX),Next Appointment Date(Calender),STL/Model Quality(Combobox,Good Bad),
+Image and Video Uploading Section
+=================================
+Extra Oral Image(Multiple Image Uploading Facility),
+Intra Oral Image(Multiple Image Uploading Facility),
+CEPH(Multiple Image Uploading Facility),
+OPG(Multiple Image Uploading Facility), 
+Video ploading Facility
+
+
+Chief Complaint(TEXTBOX),
+Other Concerns(TEXTBOX),
+Video ploading Facility
+Type Of Plan(COMBOBOX,BOTH ARCH/UPPER ARCH ONLY/LOWER ARCH ONLY)
+TYPE OF CASE STUDY(COMBOBOX,CASUAL REPORT/VIDEO REPORT),
+SUGGESTIONS FROM DOCTOR(TEXTBOX),
+
+SECTION: DENTAL FINDINGS 
+========================
+DECIDOUS TOOTH(TEXTBOX),
+ROTATION(TEXTBOX),
+MOLAR RELATION(TEXTBOX),
+OVERJET(TEXTBOX),
+OVERBITE(TEXTBOX),
+MISSING TEETH(TEXTBOX),
+MIDLINE SHIFT(TEXTBOX),
+CROSSBITE(TEXTBOX),
+ARCH SHAPE(TEXTBOX),
+DEEPBITE(TEXTBOX),
+OPEN BITE(TEXTBOX),
+SPACING(TEXTBOX),
+CARIES/GROSSLY DECAYED/ROOT STUMP(TEXTBOX)
+
+RADIOGRAPHIC FINDINGS 
+=======================
+IMPACTION(TEXTBOX),
+PERIO DONTAL STATUS(TEXTBOX)
+
+SECTION :DENTAL HISTORY
+========================
+EXTRACTION(TEXTBOX),
+RCT(TEXTBOX),
+CROWN/BRIDGE/IMPLANT(TEXTBOX),
+TONGUE THRUSTING(CHECKBOX),
+BRUXISM(TEXTBOX),
+MOUTH BREATHING(CHECKBOX),
+THUMB SUCKING(CHECKBOX),
+LIP BITING(CHECKBOX)
+
+SECTION :MEDICAL HISTORY 
+========================
+MEDICATIONS(LARGE TEXTBOX)
+ALLERGIES(COMBOBOX,PLASTIC/METAL/LATEX/FOOD/MEDICATION)
+REMARKS(TEXTBOX)
+
+for reducing complexity we can split this/use tabs
