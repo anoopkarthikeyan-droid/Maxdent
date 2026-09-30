@@ -7,6 +7,8 @@
     "dev:backend": "backend\\.venv\\Scripts\\python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8001 --app-dir backend",
     "db:init": "backend\\.venv\\Scripts\\python scripts\\ensure_schema.py",
     "db:up": "docker compose up -d mariadb",
-    "db:down": "docker compose down"
+    "db:down": "docker compose down",
+    "app:up": "docker compose --profile app up -d --build",
+    "app:down": "docker compose --profile app down"
   }
 }

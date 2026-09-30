@@ -15,7 +15,27 @@ MDO/
 └── docker-compose.yml # Optional MariaDB via Docker
 ```
 
-## Run services
+## Run with Docker (full app)
+
+```bash
+docker compose --profile app up -d --build
+```
+
+Open http://localhost:8080 (on the VPS: `http://YOUR_VPS_IP:8080`).
+
+```bash
+docker compose --profile app ps
+docker compose --profile app logs -f
+docker compose --profile app down
+```
+
+MariaDB only (local development):
+
+```bash
+docker compose up -d mariadb
+```
+
+## Run services without Docker
 
 ```bash
 # Ensure schema (once)
